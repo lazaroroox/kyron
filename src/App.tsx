@@ -549,7 +549,7 @@ function App() {
           </div>
         </div>
 
-        <iframe src="https://plataforma.kyron.space/login" style={{width: "100%",height: "650px"}}/>
+        <iframe src="https://plataforma.kyron.space/register" style={{width: "100%",height: "650px"}}/>
 
         
 
