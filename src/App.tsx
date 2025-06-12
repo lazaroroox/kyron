@@ -353,7 +353,7 @@ function App() {
           <h1 className="text-2xl font-bold">KYRON</h1>
           <div className="flex gap-2">
             <button onClick={() => window.open('https://t.me/+wosAMzYNBLIxM2Mx', '_blank')} className="bg-blue-500 text-white rounded-lg py-2 px-4 hover:bg-blue-600 transition-colors flex gap-2">
-              <Send/> Grupo Gratuito
+              <Send className="h-3 w-3"/> Grupo Gratuito
             </button>
             <button
               onClick={handleLogout}
