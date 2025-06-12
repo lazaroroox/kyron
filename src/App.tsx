@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TrendingUp, ArrowUpCircle, ArrowDownCircle, Users, Mail, Lock, Calculator } from 'lucide-react';
+import { TrendingUp, ArrowUpCircle, ArrowDownCircle, Users, Mail, Lock, Calculator, Telegram } from 'lucide-react';
 import { traderNames, tradingCategories, getAllTradingPairs } from './data/traders';
 import { auth } from './lib/firebase';
 import { signInWithEmailAndPassword, signOut, onAuthStateChanged, User } from 'firebase/auth';
@@ -368,7 +368,7 @@ function App() {
       <main className="container mx-auto p-4">
         <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
           <div className="flex items-center gap-2 mb-4">
-            <Calculator className="h-6 w-6 text-blue-400" />
+            <Telegram className="h-6 w-6 text-blue-400" />
             <h2 className="text-xl font-bold">Cálculo de Entrada</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
