@@ -245,15 +245,15 @@ function App() {
 
       switch (selectedTimeframe) {
         case 'M1':
-          shouldShowPreSignal = seconds === 50;
+          shouldShowPreSignal = seconds === 45;
           shouldGenerateSignal = seconds === 55;
           break;
         case 'M5':
-          shouldShowPreSignal = seconds === 50 && (minutes + 1) % 5 === 0;
+          shouldShowPreSignal = seconds === 45 && (minutes + 1) % 5 === 0;
           shouldGenerateSignal = seconds === 0 && minutes % 5 === 0;
           break;
         case 'M15':
-          shouldShowPreSignal = seconds === 50 && (minutes + 1) % 15 === 0;
+          shouldShowPreSignal = seconds === 45 && (minutes + 1) % 15 === 0;
           shouldGenerateSignal = seconds === 0 && minutes % 15 === 0;
           break;
       }
@@ -266,21 +266,22 @@ function App() {
       if (shouldGenerateSignal) {
         const { buySignal: newBuySignal, sellSignal: newSellSignal } = generateBalancedSignals();
         
-        setBuySignal(newBuySignal);
-        setSellSignal(newSellSignal);
 
         if (newBuySignal > 70) {
           addNotification('buy', `Oportunidade de COMPRA em ${selectedPair} - Força: ${getSignalStrength(newBuySignal)}`);
+
+          setBuySignal(newBuySignal);
+          setSellSignal(newSellSignal);
         }
         
         if (newSellSignal > 70) {
           addNotification('sell', `Oportunidade de VENDA em ${selectedPair} - Força: ${getSignalStrength(newSellSignal)}`);
+
+          setBuySignal(newBuySignal);
+          setSellSignal(newSellSignal);
         }
 
-        if (Math.random() > 0.7) {
-          setShowAlert(true);
-          setTimeout(() => setShowAlert(false), 3000);
-        }
+        
       }
     };
 
