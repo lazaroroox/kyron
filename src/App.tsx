@@ -282,6 +282,14 @@ function App() {
         }
 
         
+        setTimeout(function() => {
+          setBuySignal(50);
+          setSellSignal(50);
+          setShowAlert(false);
+          setShowPreSignalAlert(false);
+        }, 15000);
+
+        
       }
     };
 
