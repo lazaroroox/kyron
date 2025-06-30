@@ -282,7 +282,7 @@ function App() {
         }
 
         
-        setTimeout(function() => {
+        setTimeout(function(){
           setBuySignal(50);
           setSellSignal(50);
           setShowAlert(false);
